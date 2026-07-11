@@ -1,0 +1,33 @@
+pipeline{
+
+ agent any
+
+ stages{
+  stage("clone"){
+   steps {
+     git "https://github.com/mahamunisathish/AWS-Project.git"
+
+   }
+  
+  }
+
+  stage("build"){
+   steps {
+    sh "python3 --version"
+
+   }
+    
+  }
+
+  stage("deploy"){
+   steps {
+    sh "python3 app.py"
+
+   }
+    
+  }
+
+
+ }
+
+}
